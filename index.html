@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Pozuelo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-viewport">
+        
+        <section id="welcome-screen" class="glass-card">
+            <div class="brand-header">
+                <img src="assets/logo_Pozuelo.png" alt="Pozuelo" class="main-logo-scaled">
+            </div>
+            <div class="login-content">
+                <h1>Asistencia y Evaluación</h1>
+                <div class="input-container-centered">
+                    <input type="text" id="employeeCode" placeholder="Código de empleado" autofocus>
+                    <button id="btn-verify">Verificar Código</button>
+                </div>
+            </div>
+        </section>
+
+       <section id="form-screen" class="glass-card" style="display: none;">
+    <div class="form-content">
+        <h2 id="greeting-text" style="text-align: center; color: #a50000; font-size: 1.5rem;">
+            ¡Bienvenido, WILLIAM ALFARO DELGADO!
+        </h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">
+            Completa los detalles de tu capacitación
+        </p>
+
+                <form id="trainingForm">
+                    <div class="form-group">
+                        <label><b>Área de Capacitación</b></label>
+                        <select id="trainingArea" required>
+                            <option value="" disabled selected>Seleccione el área</option>
+                            <option value="gestion_humana">Gestión Humana</option>
+                            <option value="produccion">Producción</option>
+                            <option value="calidad">Calidad</option>
+                            <option value="sig">(SIG) Sistemas de Gestión Integrado</option>
+                            <option value="sst">(SST) Salud y Seguridad del Trabajo</option>
+                            <option value="brigada">Brigada</option>
+                            <option value="mdeo">MDEO</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Curso a Evaluar</b></label>
+                        <select id="course" required>
+                            <option value="" disabled selected>Seleccione el curso</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Nombre del Facilitador</b></label>
+                        <input type="text" id="facilitatorName" placeholder="Nombre de quien imparte" required>
+                    </div>
+
+                    <div class="form-group">
+    <label><b>¿El facilitador mostró dominio del tema?</b></label>
+    <div class="emoji-rating">
+        <input type="radio" name="rating" value="1" id="rate-1" required>
+        <label for="rate-1" title="Totalmente en desacuerdo">😡</label>
+
+        <input type="radio" name="rating" value="2" id="rate-2">
+        <label for="rate-2" title="En desacuerdo">😟</label>
+
+        <input type="radio" name="rating" value="3" id="rate-3">
+        <label for="rate-3" title="Neutral">😐</label>
+
+        <input type="radio" name="rating" value="4" id="rate-4">
+        <label for="rate-4" title="De acuerdo">😊</label>
+
+        <input type="radio" name="rating" value="5" id="rate-5">
+        <label for="rate-5" title="Totalmente de acuerdo">🤩</label>
+    </div>
+</div>
+
+                    <div class="form-group">
+                        <label><b>¿Los conocimientos adquiridos agregan valor a su puesto? (1 a 5)</b></label>
+                        <div class="rating-scale">
+                            <label><input type="radio" name="valor" value="1" required> 1</label>
+                            <label><input type="radio" name="valor" value="2"> 2</label>
+                            <label><input type="radio" name="valor" value="3"> 3</label>
+                            <label><input type="radio" name="valor" value="4"> 4</label>
+                            <label><input type="radio" name="valor" value="5"> 5</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>¿Cómo califica el espacio físico/virtual? (1 a 5)</b></label>
+                        <div class="rating-scale">
+                            <label><input type="radio" name="espacio" value="1" required> 1</label>
+                            <label><input type="radio" name="espacio" value="2"> 2</label>
+                            <label><input type="radio" name="espacio" value="3"> 3</label>
+                            <label><input type="radio" name="espacio" value="4"> 4</label>
+                            <label><input type="radio" name="espacio" value="5"> 5</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Duración de la formación</b></label>
+                        <select id="duration" required>
+                            <option value="" disabled selected>Seleccione la duración</option>
+                            <option value="1h">1 Hora</option>
+                            <option value="2h">2 Horas</option>
+                            <option value="3h">3 Horas</option>
+                            <option value="4h">4 Horas</option>
+                            <option value="5h">5 Horas</option>
+                            <option value="6h">6 Horas</option>
+                            <option value="7h">7 Horas</option>
+                            <option value="8h">8 Horas</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <div style="background: #a50000; color: white; padding: 10px; border-radius: 5px 5px 0 0; font-weight: bold; text-align: center;">
+                            Eficacia de la formación
+                        </div>
+                        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 0 0 5px 5px; background: #fff;">
+                            <div class="form-group">
+                                <label><b>Esta formación cuenta con certificado de participación *</b></label><br>
+                                <label><input type="radio" name="cert" value="Si" required> Si</label>
+                                <label><input type="radio" name="cert" value="No"> No</label>
+                            </div>
+                            <div class="form-group">
+                                <label><b>Durante la formación se validó conocimiento con: test, práctica y/o proyecto *</b></label><br>
+                                <label><input type="radio" name="valida" value="Si" required> Si</label>
+                                <label><input type="radio" name="valida" value="No, es informativa"> No, es informativa</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions-wrapper" style="margin-top: 20px; display: flex; gap: 10px;">
+                        <button type="submit" class="btn-submit-app" style="flex: 2;">Finalizar Registro</button>
+                        <button type="button" class="btn-cancel-app" onclick="location.reload()" style="flex: 1;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

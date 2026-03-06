@@ -1,0 +1,283 @@
+:root {
+    --pozuelo-red: #B00000;
+    --bg-light: #F4F7F6;
+    --white: #ffffff;
+    --text-dark: #333333;
+}
+
+/* 1. COMPORTAMIENTO GLOBAL */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html {
+    height: 100%;
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal con scroll habilitado correctamente */
+.app-viewport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto; /* Permite bajar si el contenido es largo */
+}
+
+/* 2. TARJETA (Estilo Compacto Original) */
+.glass-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px; /* Volvemos al ancho compacto de tus fotos */
+    margin: auto;
+}
+
+/* 3. PANTALLA DE INICIO (Restaurada) */
+.brand-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.main-logo-scaled {
+    width: 180px;
+    height: auto;
+}
+
+.btn-verify-premium {
+    background: var(--pozuelo-red);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(176, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-verify-premium:hover {
+    background: #8B0000;
+}
+
+/* 4. FORMULARIO Y TEXTOS */
+h1 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 10px; text-align: center; }
+#greeting-text { color: var(--pozuelo-red); text-align: center; font-size: 1.3rem; margin-bottom: 5px; }
+
+.form-group { margin-bottom: 18px; text-align: left; }
+label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.9rem; }
+
+select, #facilitatorName {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* 5. EMOJIS (Interactividad Total Restaurada) */
+.emoji-rating {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    direction: ltr; /* Asegura orden izquierda a derecha */
+}
+
+.emoji-rating input {
+    display: none; /* Escondemos el radio button */
+}
+
+.emoji-rating label {
+    font-size: 2.2rem;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transition: all 0.2s ease;
+}
+
+/* Al pasar el mouse se iluminan */
+.emoji-rating label:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Al seleccionar uno, se queda iluminado */
+.emoji-rating input:checked + label {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* 6. ESCALAS 1 A 5 (Compactas) */
+.rating-scale {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.rating-scale label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* 7. SECCIÓN EFICACIA ROJA (Estilo Pozuelo) */
+.eficacia-header {
+    background: var(--pozuelo-red);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.eficacia-content {
+    border: 1px solid var(--pozuelo-red);
+    padding: 15px;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 20px;
+}
+
+/* 8. BOTONES FINALES */
+.btn-submit-app {
+    background: #222;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-cancel-app {
+    background: #eee;
+    color: #666;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* 1. MEJORA DE LA BARRA DE BÚSQUEDA Y BOTONES INICIALES */
+#employeeCode {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #eee;
+    border-radius: 50px; /* Estilo píldora moderna */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fdfdfd;
+}
+
+#employeeCode:focus {
+    border-color: #B00000;
+    box-shadow: 0 0 10px rgba(176, 0, 0, 0.1);
+    outline: none;
+}
+
+/* El botón gris que mencionas, ahora será rojo Pozuelo y moderno */
+#btn-verify, .btn-verify-premium {
+    background: #B00000 !important; /* Rojo corporativo */
+    color: white !important;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(176, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+#btn-verify:hover {
+    background: #8B0000 !important;
+    transform: translateY(-2px);
+}
+
+/* 2. DISEÑO DE LAS PREGUNTAS Y EMOJIS */
+.form-group label {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 12px;
+    display: block;
+    font-weight: 700;
+}
+
+/* Emojis interactivos: Al pasar el mouse se iluminan */
+.emoji-rating label {
+    font-size: 2.5rem;
+    filter: grayscale(100%);
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.emoji-rating label:hover,
+.emoji-rating input:checked + label {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* 3. BARRA DE EFICACIA (La que se ve roja sólida en tu foto) */
+#eficacia-header, .eficacia-header {
+    background: linear-gradient(90deg, #B00000, #E60000) !important;
+    color: white;
+    padding: 15px;
+    border-radius: 12px 12px 0 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none !important;
+}
+
+.eficacia-content {
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: none;
+    padding: 25px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* 4. BOTÓN FINALIZAR (El gran cambio) */
+.btn-submit-app, button[type="submit"] {
+    background: #222 !important;
+    color: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 700;
+}
+
+.btn-submit-app:hover {
+    background: #000 !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* 5. SELECTORES Y CAMPOS DE TEXTO */
+select, input[type="text"] {
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    background-color: #fafafa !important;
+}
+
+.hidden { display: none !important; }
